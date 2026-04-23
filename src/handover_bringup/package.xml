@@ -1,11 +1,22 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>handover_bringup</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="conallodowd@gmail.com">conall</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Bringup package for handover system</description>
+  <maintainer email="you@example.com">conall</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <exec_depend>vzense_camera</exec_depend>
+  <exec_depend>handover_perception</exec_depend>
+  <exec_depend>handover_control</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>ur_robot_driver</exec_depend>
+  <exec_depend>ur_moveit_config</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
