@@ -1,0 +1,26 @@
+# Goal
+
+uint8 TARGET_POSE=1
+uint8 TARGET_JOINTS=2
+
+uint8 target_type
+
+geometry_msgs/PoseStamped pose_target
+float64[] joint_target
+
+bool cartesian
+float32 velocity_scaling
+float32 acceleration_scaling
+float32 timeout_sec
+
+---
+# Result
+
+bool success
+string message
+
+---
+# Feedback
+
+string state
+float32 elapsed_time

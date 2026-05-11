@@ -71,42 +71,29 @@ class PalmTransformNode(Node):
         py = palm_base.point.y
         pz = palm_base.point.z
 
-        # Vector from palm toward robot base origin
-        vx = -px
-        vy = -py
-        vz = -pz
-
-        norm = math.sqrt(vx * vx + vy * vy + vz * vz)
-        if norm < 1e-6:
-            return
-
-        ux = vx / norm
-        uy = vy / norm
-        uz = vz / norm
-
         target = PointStamped()
         target.header = palm_base.header
-        target.point.x = px + self.offset_m * ux
-        target.point.y = py + self.offset_m * uy
-        target.point.z = pz + self.offset_m * uz
+        target.point.x = px
+        target.point.y = py
+        target.point.z = pz
 
         self.target_pub.publish(target)
 
         self.publish_marker(
             palm_base,
-            marker_id=0,
-            ns="handover",
+            marker_id=1,
+            ns="palm",
             rgb=(0.0, 1.0, 0.0),
             scale=0.05,
         )
 
-        self.publish_marker(
-            target,
-            marker_id=1,
-            ns="handover",
-            rgb=(1.0, 0.0, 0.0),
-            scale=0.05,
-        )
+        # self.publish_marker(
+        #     target,
+        #     marker_id=1,
+        #     ns="handover",
+        #     rgb=(1.0, 0.0, 0.0),
+        #     scale=0.05,
+        # )
 
         self.get_logger().info(
             f"Palm(base): ({px:.3f}, {py:.3f}, {pz:.3f})  "

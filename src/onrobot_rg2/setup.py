@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'handover_control'
+package_name = 'onrobot_rg2'
 
 setup(
     name=package_name,
@@ -24,10 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "move_sequence = handover_control.move_sequence:main",
-            'moveit_executor_node = handover_control.moveit_executor_node:main',
-            'moveit_motion_server_node = handover_control.moveit_motion_server_node:main',
-            "handover_state_node = handover_control.handover_state_node:main"
+            "onrobot_rg2_node = onrobot_rg2.onrobot_rg2_node:main",
         ],
     },
 )

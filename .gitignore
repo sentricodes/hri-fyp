@@ -14,3 +14,14 @@ venv/
 
 # OS cruft
 .DS_Store
+
+# Generated robot/debug outputs
+current_robot.urdf
+debug_urdf/
+frames_*.gv
+frames_*.pdf
+
+# ROS 2 generated outputs
+build/
+install/
+log/
